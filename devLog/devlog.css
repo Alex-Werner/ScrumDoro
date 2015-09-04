@@ -1,0 +1,68 @@
+@font-face {
+    font-family: defaultFont;
+    src: url(fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: defaultFont;
+    src: url(fonts/OpenSans-Bold.ttf);
+    font-weight: bold;
+}
+body{
+    background-color: darkgray;
+    font-family: defaultFont;
+}
+textarea{
+    padding: 0;
+    width: 100%;
+    margin-bottom: 5px;
+}
+#log{
+    display: inline-block;
+    width: 250px;
+    height: 500px;
+    background-color: white;
+    margin: 20px;
+    box-shadow: dimgray 2px 2px 25px;
+}
+#list > li{
+    margin-bottom: 2px;
+    font-weight: bolder;
+    background-color: lightgrey;
+    position: relative;
+}
+.expand{
+    background-image: url("icons/ic_expand_more_black_24dp.png");
+    background-size: 27px 27px;
+    display: inline-block;
+    height: 27px;
+    width: 27px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.add-button{
+    display: inline-block;
+    font-size: x-small;
+    color: white;
+    background-color: dodgerblue;
+    border: steelblue 1px solid;
+    border-radius: 5px;
+    padding: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    position: absolute;
+    right: 4px;
+    top: 12.5%
+}
+hr{
+    margin: 10px 15px 10px 15px;
+}
+#add{
+    padding: 0 10px 0 10px;
+    text-align: center;
+}
+button{
+    background-color: #2ba6cb;
+    border: 1px solid #1e728c;
+    box-shadow: 0 2px 0 rgba(255, 255, 255, 0.5) inset;
+    padding-top: 2px;
+}
