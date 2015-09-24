@@ -16,6 +16,12 @@ textarea{
     width: 100%;
     margin-bottom: 5px;
 }
+button{
+    background-color: #2ba6cb;
+    border: 1px solid #1e728c;
+    box-shadow: 0 2px 0 rgba(255, 255, 255, 0.5) inset;
+    padding-top: 2px;
+}
 #log{
     display: inline-block;
     width: 250px;
@@ -24,7 +30,7 @@ textarea{
     margin: 20px;
     box-shadow: dimgray 2px 2px 25px;
 }
-#list > li{
+#list > li > .head{
     margin-bottom: 2px;
     font-weight: bolder;
     background-color: lightgrey;
@@ -42,16 +48,20 @@ textarea{
 .add-button{
     display: inline-block;
     font-size: x-small;
-    color: white;
-    background-color: dodgerblue;
-    border: steelblue 1px solid;
-    border-radius: 5px;
-    padding: 4px;
-    cursor: pointer;
+    background-color: #2ba6cb;
+    border: 1px solid #1e728c;
+    box-shadow: 0 2px 0 rgba(255, 255, 255, 0.5) inset;
+    border-radius: 4px;
+    padding: 6px 4px 4px 4px;
     margin-left: 10px;
     position: absolute;
     right: 4px;
-    top: 12.5%
+    top: 12.5%;
+    cursor: pointer;
+}
+.add-button:active{
+    box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.5) inset;
+    padding: 4px 4px 6px 4px;
 }
 hr{
     margin: 10px 15px 10px 15px;
@@ -59,10 +69,4 @@ hr{
 #add{
     padding: 0 10px 0 10px;
     text-align: center;
-}
-button{
-    background-color: #2ba6cb;
-    border: 1px solid #1e728c;
-    box-shadow: 0 2px 0 rgba(255, 255, 255, 0.5) inset;
-    padding-top: 2px;
 }

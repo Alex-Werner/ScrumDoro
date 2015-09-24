@@ -10,24 +10,41 @@
     <div id="log">
         <ul id="list">
             <li>
-                <div class="expand"></div>
-                Improvements
-                <div class="add-button">Add</div>
+                <section class="head">
+                    <div class="expand"></div>
+                    Improvements
+                    <button class="add-button">Add</button>
+                </section>
+                <section class="content">
+                </section>
             </li>
             <li>
-                <div class="expand"></div>
-                New Features
-                <div class="add-button">Add</div>
+                <section class="head">
+                    <div class="expand"></div>
+                    Improvements
+                    <button class="add-button">Add</button>
+                </section>
+                <section class="content">
+                    Pouet pouet pouet
+                </section>
             </li>
             <li>
-                <div class="expand"></div>
-                Bugfixes
-                <div class="add-button">Add</div>
+                <section class="head">
+                    <div class="expand"></div>
+                    Improvements
+                    <button class="add-button">Add</button>
+                </section>
+                <section class="content">
+                </section>
             </li>
             <li>
-                <div class="expand"></div>
-                Bugs
-                <div class="add-button">Add</div>
+                <section class="head">
+                    <div class="expand"></div>
+                    Improvements
+                    <button class="add-button">Add</button>
+                </section>
+                <section class="content">
+                </section>
             </li>
         </ul>
         <hr>
@@ -41,4 +58,15 @@
         </section>
     </div>
 </body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    $(".expand").click(function(){
+        $(this).parent().parent().children(".content").last().slideToggle();
+    });
+    $(".add-button").click(function(){
+        var category = $(this).parent().parent().children(".content").last();
+        category.append("<input>");
+        category.slideDown();
+    });
+</script>
 </html>
