@@ -22,6 +22,12 @@ button{
     box-shadow: 0 2px 0 rgba(255, 255, 255, 0.5) inset;
     padding-top: 2px;
 }
+input{
+    width: 100%;
+    padding-right: 15px;
+    position: relative;
+    right: 15px;
+}
 #log{
     display: inline-block;
     width: 250px;
@@ -30,11 +36,18 @@ button{
     margin: 20px;
     box-shadow: dimgray 2px 2px 25px;
 }
-#list > li > .head{
+.head{
     margin-bottom: 2px;
     font-weight: bolder;
     background-color: lightgrey;
     position: relative;
+}
+.content{
+    margin-bottom: 2px;
+    position: relative;
+}
+.content > p{
+    padding-left: 5px;
 }
 .expand{
     background-image: url("icons/ic_expand_more_black_24dp.png");
@@ -62,6 +75,7 @@ button{
 .add-button:active{
     box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.5) inset;
     padding: 4px 4px 6px 4px;
+    outline: none;
 }
 hr{
     margin: 10px 15px 10px 15px;
@@ -69,4 +83,23 @@ hr{
 #add{
     padding: 0 10px 0 10px;
     text-align: center;
+}
+.close{
+    background-image: url("icons/ic_clear_black_24dp.png");
+    float: left;
+    width: 20px;
+    height: 20px;
+    background-size: 21px 21px;
+    cursor: pointer;
+
+}
+.input-wrapper{
+    padding: 0 6px 0 35px;
+}
+.send{
+    width: 20px;
+    position: absolute;
+    right: 1px;
+    z-index: 1;
+    cursor: pointer;
 }

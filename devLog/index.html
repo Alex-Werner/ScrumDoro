@@ -25,7 +25,7 @@
                     <button class="add-button">Add</button>
                 </section>
                 <section class="content">
-                    Pouet pouet pouet
+                    <p>Pouet pouet pouet</p>
                 </section>
             </li>
             <li>
@@ -59,14 +59,42 @@
     </div>
 </body>
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/notificationAgent.js"></script>
 <script type="text/javascript">
     $(".expand").click(function(){
         $(this).parent().parent().children(".content").last().slideToggle();
     });
     $(".add-button").click(function(){
+
         var category = $(this).parent().parent().children(".content").last();
-        category.append("<input>");
-        category.slideDown();
+        if(category.children(".input-wrapper").length == 0) {
+            category.prepend("<div class='input-wrapper'><input></div>");
+            category.prepend("<img src='icons/ic_publish_black_24dp.png' class='send' />");
+            category.prepend("<div class='close'></div>");
+            $(".close", category).click(function(){
+                $(this).next().remove();
+                $(this).next().remove();
+                $(this).remove();
+            });
+            $('input', category).keyup(function(event){
+                if(event.keyCode == 13){
+                    category.prepend("<p>" + $(this).val() + "</p>");
+                    $(".close", category).next().remove();
+                    $(".close", category).remove();
+                    $(this).parent().remove();
+                }
+            });
+            $('.send', category).click(function(){
+                category.prepend("<p>" + $('input', category).val() + "</p>");
+                $(this).next().remove();
+                $(this).prev().remove();
+                $(this).remove();
+            });
+            category.slideDown();
+        }
+        else
+            category.slideDown();
+        category.children().children("input").last().focus();
     });
 </script>
 </html>
