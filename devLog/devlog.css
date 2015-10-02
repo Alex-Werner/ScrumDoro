@@ -11,11 +11,6 @@ body{
     background-color: darkgray;
     font-family: defaultFont;
 }
-textarea{
-    padding: 0;
-    width: 100%;
-    margin-bottom: 5px;
-}
 button{
     background-color: #2ba6cb;
     border: 1px solid #1e728c;
@@ -47,7 +42,10 @@ input{
     position: relative;
 }
 .content > p{
-    padding-left: 5px;
+    border: 1px solid rgb(255, 255, 255);
+    margin: 5px;
+    padding: 5px;
+    position: relative;
 }
 .expand{
     background-image: url("icons/ic_expand_more_black_24dp.png");
@@ -102,4 +100,43 @@ hr{
     right: 1px;
     z-index: 1;
     cursor: pointer;
+}
+.content > p:hover{
+    background: rgb(240, 240, 240);
+    border-color: rgb(240, 240, 240);
+    border-radius: 5px;
+}
+.delete{
+    background-image: url("icons/ic_dnd_on_red_24dp.png");
+    background-size: 11px 11px;
+    height: 11px;
+    width: 11px;
+    display: none;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+}
+.delete{
+    cursor: pointer;
+}
+.content > p:hover > .delete{
+    display: inline-block;
+}
+.edit{
+    display: none;
+    position: absolute;
+    right: 17px;
+    top: 2px;
+    border: #2ba6cb solid 1px;
+    background: #2ba6cb;
+    color: white;
+    border-radius: 4px;
+    font-size: xx-small;
+    font-weight: 600;
+    padding: 1px;
+    cursor: pointer;
+}
+.content > p:hover > .edit{
+    display: inline-block;
+    opacity: 0.8;
 }

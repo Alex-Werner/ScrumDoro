@@ -21,17 +21,7 @@
             <li>
                 <section class="head">
                     <div class="expand"></div>
-                    Improvements
-                    <button class="add-button">Add</button>
-                </section>
-                <section class="content">
-                    <p>Pouet pouet pouet</p>
-                </section>
-            </li>
-            <li>
-                <section class="head">
-                    <div class="expand"></div>
-                    Improvements
+                    New Features
                     <button class="add-button">Add</button>
                 </section>
                 <section class="content">
@@ -40,22 +30,22 @@
             <li>
                 <section class="head">
                     <div class="expand"></div>
-                    Improvements
+                    Bugs
+                    <button class="add-button">Add</button>
+                </section>
+                <section class="content">
+                </section>
+            </li>
+            <li>
+                <section class="head">
+                    <div class="expand"></div>
+                    Bugfixes
                     <button class="add-button">Add</button>
                 </section>
                 <section class="content">
                 </section>
             </li>
         </ul>
-        <hr>
-        <section id="add">
-            <select>
-                <option>Improvements</option>
-                <option>New Features</option>
-            </select>
-            <textarea rows="5"></textarea>
-            <button>ADD</button>
-        </section>
     </div>
 </body>
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
@@ -65,7 +55,7 @@
         $(this).parent().parent().children(".content").last().slideToggle();
     });
     $(".add-button").click(function(){
-
+        var button = $(this);
         var category = $(this).parent().parent().children(".content").last();
         if(category.children(".input-wrapper").length == 0) {
             category.prepend("<div class='input-wrapper'><input></div>");
@@ -78,17 +68,26 @@
             });
             $('input', category).keyup(function(event){
                 if(event.keyCode == 13){
-                    category.prepend("<p>" + $(this).val() + "</p>");
-                    $(".close", category).next().remove();
-                    $(".close", category).remove();
-                    $(this).parent().remove();
+                    if($(this).val() != "") {
+                        category.prepend("<p>" + $(this).val() + "<span class='edit'>EDIT</span>"  + "<span class='delete'></span>" + "</p>");
+                        $(".close", category).next().remove();
+                        $(".close", category).remove();
+                        $(this).parent().remove();
+                        $(button).trigger("click");
+                    }
+                    else
+                        $(this).attr("placeholder", "Vide !");
                 }
             });
             $('.send', category).click(function(){
-                category.prepend("<p>" + $('input', category).val() + "</p>");
-                $(this).next().remove();
-                $(this).prev().remove();
-                $(this).remove();
+                if($('input', category).val() != "") {
+                    category.prepend("<p>" + $('input', category).val() + "<span class='edit'>EDIT</span>"  + "<span class='delete'></span>" + "</p>");
+                    $(this).next().remove();
+                    $(this).prev().remove();
+                    $(this).remove();
+                }
+                else
+                    $('input', category).attr("placeholder", "Vide !");
             });
             category.slideDown();
         }
